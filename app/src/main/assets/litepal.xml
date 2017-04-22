@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <litepal>
-    <dbname value = "cool_weather" />
+    <dbname value = "cool_weather_zkx" />
 
     <version value = "1"/>
 
-    <list> //指定所有的映射模型
-        <mapping class="com.coolweather.android.db.Province"/>
-        <mapping class="com.coolweather.android.db.City"/>
-        <mapping class="com.coolweather.android.db.County"/>
+    <list> //指定所有的映射模型，注意这里一定要使用完整的类名，否则会出错
+        <mapping class="com.example.coolweatherzkx.db.Province"/>
+        <mapping class="com.example.coolweatherzkx.db.City"/>
+        <mapping class="com.example.coolweatherzkx.db.County"/>
     </list>
 </litepal>
