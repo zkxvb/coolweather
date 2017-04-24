@@ -1,6 +1,7 @@
 package com.example.coolweatherzkx;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -100,6 +101,13 @@ public class ChooseAreaFragment extends Fragment {
                 } else if (currentLevel == LEVEL_CITY) {
                     selectedCity = cityList.get(position);
                     queryCounties();
+                } else if (currentLevel == LEVEL_COUNTY) {
+                    //实现从省市县列表界面跳转到天气界面，如果当前级别是LEVEL_COUNTY，就启动WeatherActivity
+                    String weatherId = countyList.get(position).getWeatherId();
+                    Intent intent = new Intent(getActivity(), WeatherActivity.class);
+                    intent.putExtra("weather_id", weatherId);
+                    startActivity(intent);
+                    getActivity().finish(); //getActivity() : 在碎片中使用，得到和当前碎片相关联的活动实例
                 }
             }
         });
